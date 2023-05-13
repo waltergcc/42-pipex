@@ -6,7 +6,7 @@
 /*   By: wcorrea- <wcorrea-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:57:17 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/05/12 11:30:36 by wcorrea-         ###   ########.fr       */
+/*   Updated: 2023/05/13 11:49:08 by wcorrea-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 
 void	sub_process(int *fd, char **argv, char **envp);
 void	main_process(int *fd, char **argv, char **envp);
-void	error(void);
+void	exit_error(void);
+void	custom_error(char *header, char *msg);
 void	free_split(char **str);
 char	*get_cmd_path(char *cmd, char **envp);
 void	run_cmd(char *cmd, char **envp);
