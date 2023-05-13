@@ -31,6 +31,22 @@ Pipex is a small command-line program that emulates the functionality of the she
 	- The parent process exits.
 6. If you don't have any errors, the program ends successfully.
 
+## How to use
+To compile this program, run the following commands:
+```bash
+make
+```
+Then, to run the program, run the following command:
+```bash
+./pipex file1 cmd1 cmd2 file2
+```
+
+## Memory leaks test
+For test memory leaks, run:
+```bash
+valgrind --leak-check=full --trace-children=yes ./pipex file1 cmd1 cmd2 file2
+```
+
 ## Used tests
 - PIPEXaminator: https://github.com/mariadaan/PIPEXaminator
 - pipex-tester: https://github.com/vfurmane/pipex-tester
