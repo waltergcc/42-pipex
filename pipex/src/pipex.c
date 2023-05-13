@@ -6,7 +6,7 @@
 /*   By: wcorrea- <wcorrea-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 08:57:59 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/05/13 12:14:12 by wcorrea-         ###   ########.fr       */
+/*   Updated: 2023/05/13 17:39:49 by wcorrea-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	sub_process(int *fd, char **argv, char **envp)
 
 void	main_process(int *fd, char **argv, char **envp)
 {
-	int	output_file;
+	int	fd_out;
 
-	output_file = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
-	if (output_file == -1)
+	fd_out = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
+	if (fd_out == -1)
 		exit_error();
 	dup2(fd[0], STDIN_FILENO);
-	dup2(output_file, STDOUT_FILENO);
+	dup2(fd_out, STDOUT_FILENO);
 	close(fd[1]);
 	run_cmd(argv[3], envp);
 }
