@@ -6,7 +6,7 @@
 #    By: wcorrea- <wcorrea-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 08:04:49 by wcorrea-          #+#    #+#              #
-#    Updated: 2023/05/12 12:44:46 by wcorrea-         ###   ########.fr        #
+#    Updated: 2023/05/14 20:25:17 by wcorrea-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ INCLUDE = -I include
 MAKE = make -C
 LIBFT_PATH = libft
 LIBFT = -L ${LIBFT_PATH} -lft
+
+#valgrind --leak-check=full --trace-children=yes
 
 .c.o:
 		${CC} ${CFLAGS} ${INCLUDE} -c $< -o ${<:.c=.o}
