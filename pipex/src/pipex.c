@@ -6,11 +6,28 @@
 /*   By: wcorrea- <wcorrea-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 08:57:59 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/05/13 17:39:49 by wcorrea-         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:57:33 by wcorrea-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+void	check_envp(char **envp)
+{
+	int i;
+	int check;
+
+	i = -1;
+	check = 0;	
+	while (envp[++i])
+		if (ft_strnstr(envp[i], "PATH=", 5) && envp[i][6])
+			check = 1;
+	if (!check)
+	{
+		custom_error("Error", "The environment PATH has no values.");
+		exit(1);
+	}	
+}
 
 void	sub_process(int *fd, char **argv, char **envp)
 {
@@ -43,6 +60,7 @@ int	main(int argc, char **argv, char **envp)
 	int		fd[2];
 	pid_t	pid;
 
+	check_envp(envp);
 	if (argc == 5)
 	{
 		if (pipe(fd) == -1)

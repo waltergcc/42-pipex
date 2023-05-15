@@ -6,7 +6,7 @@
 /*   By: wcorrea- <wcorrea-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:58:28 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/05/13 12:25:09 by wcorrea-         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:45:46 by wcorrea-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*get_cmd_path(char *cmd, char **envp)
 	char	*only_path;
 
 	i = 0;
-	while (!ft_strnstr(envp[i], "PATH", 4))
+	while (!ft_strnstr(envp[i], "PATH=", 5))
 		i++;
 	envp_paths = ft_split(envp[i] + 5, ':');
 	i = -1;
