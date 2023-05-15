@@ -6,7 +6,7 @@
 /*   By: wcorrea- <wcorrea-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 08:57:59 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/05/15 15:57:33 by wcorrea-         ###   ########.fr       */
+/*   Updated: 2023/05/15 22:01:29 by wcorrea-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	check_envp(char **envp)
 {
-	int i;
-	int check;
+	int	i;
+	int	check;
 
 	i = -1;
-	check = 0;	
+	check = 0;
 	while (envp[++i])
 		if (ft_strnstr(envp[i], "PATH=", 5) && envp[i][6])
 			check = 1;

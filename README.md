@@ -46,6 +46,7 @@ For test memory leaks, run:
 ```bash
 valgrind --leak-check=full --trace-children=yes ./pipex file1 cmd1 cmd2 file2
 ```
+## Grade: 100 / 100
 
 ## Used tests
 - PIPEXaminator: https://github.com/mariadaan/PIPEXaminator
